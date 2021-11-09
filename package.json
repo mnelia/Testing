@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "test:debug": "node --inspect node_modules/.bin/jest --runInBand",
+    "test:debug": "node --inspect-brk node_modules/jest/bin/jest.js --runInBand ",
     "test:watch": "jest --watchAll --verbose=false"
   },
   "devDependencies": {

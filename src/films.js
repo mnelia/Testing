@@ -91,19 +91,37 @@ function orderByYear(array) {
 }
 
 // Exercise 6: Calculate the average of the movies in a category
-function moviesAverageByCategory(array) {
-
-  const moviesByGenre = array.filter(movie => movie.genre === 'drama');
-  debugger
-  console.log(moviesByGenre)
-  const {score} = moviesByGenre.reduce((prev, curr) => ({score: prev.score + curr.score}));
+function moviesAverageByCategory(array, genero ) {
+  //const moviesWithGenreCrim = []
+  const moviesByGenre = array.filter(movie => (movie.genre == genero) && (movie.score !== '') );
+  let sumaScore = moviesByGenre.reduce((total, movie) => total + movie.score, 0);
+  let media = sumaScore/moviesByGenre.length;
+  return media;
+  //const {score} = moviesByGenre.reduce((res, curr) => ({score: res.score + curr.score, 0}));
   
+  
+  //si dentro de generos existe la palabra Crime guardamos esa pelicula en el array moviesWithGenreCrim
+   // for(let i = 0; i < generos.length; i++) {
+  // if (generos[i] === 'Crime') moviesWithGenreCrim.push(movie)
+    }
+  
+  
+ //const peliculaMayorSiete = moviesByGenre.filter(movie => movie.score >= 7);
+ //console.log(peliculaMayorSiete)
+ 
 
-  return score / moviesByGenre.length;
+  
+  
+  
+ 
+
+  //return parseFloat(score)/moviesByGenre.length;
+
+  
   
     
 
-}
+
 
 // Exercise 7: Modify the duration of movies to minutes
 function hoursToMinutes() {
